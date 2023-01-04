@@ -9,6 +9,8 @@
 <span>@confirmResult</span>
 <br />
 <button @onclick="ShowConfirm">Confirm</button>
+<br />
+<button onclick="callMethod()">Call Method</button>
 
 @code {
     private string confirmResult;
@@ -23,5 +25,11 @@
         var result = await jsRuntime.InvokeAsync<bool>("confirm", "Would you love to proceed ?");
 
         confirmResult = result.ToString();
+    }
+
+    [JSInvokable]
+    public static Task<string> GetValueFromMethod()
+    {
+        return Task.FromResult<string>("Hello World");
     }
 }

@@ -98,7 +98,7 @@ using BlazorAppDemo.Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 13 "D:\Personal_Projects\BlazorAppDemo\BlazorAppDemo\Pages\SampleJavascript.razor"
+#line 15 "D:\Personal_Projects\BlazorAppDemo\BlazorAppDemo\Pages\SampleJavascript.razor"
        
     private string confirmResult;
 
@@ -112,6 +112,12 @@ using BlazorAppDemo.Models;
         var result = await jsRuntime.InvokeAsync<bool>("confirm", "Would you love to proceed ?");
 
         confirmResult = result.ToString();
+    }
+
+    [JSInvokable]
+    public static Task<string> GetValueFromMethod()
+    {
+        return Task.FromResult<string>("Hello World");
     }
 
 #line default

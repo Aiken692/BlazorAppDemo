@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LaboremusUganda\\Desktop\\Davies\\BlazorAppDemo\\BlazorAppDemo.csproj",
+      "projectUniqueName": "D:\\Personal_Projects\\BlazorAppDemo\\BlazorAppDemo\\BlazorAppDemo.csproj",
       "projectName": "BlazorAppDemo",
-      "projectPath": "C:\\Users\\LaboremusUganda\\Desktop\\Davies\\BlazorAppDemo\\BlazorAppDemo.csproj",
+      "projectPath": "D:\\Personal_Projects\\BlazorAppDemo\\BlazorAppDemo\\BlazorAppDemo.csproj",
       "packagesPath": "C:\\Users\\LaboremusUganda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LaboremusUganda\\Desktop\\Davies\\BlazorAppDemo\\obj\\",
+      "outputPath": "D:\\Personal_Projects\\BlazorAppDemo\\BlazorAppDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
