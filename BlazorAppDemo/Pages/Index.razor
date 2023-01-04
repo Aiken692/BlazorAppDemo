@@ -4,7 +4,7 @@
 <h1>Index Page</h1>
 <br/>
 
-<ContactList Contacts="contacts">
+<ContactList @ref="contactList" Contacts="contacts">
     <NullContacts>
         <br>
         <span>Contacts are loading ...{from Index Razor}</span>
@@ -23,4 +23,6 @@
 <br>
 <MyTextbox @attributes="@MyTextboxAttributes"></MyTextbox>
 <br/>
+
+<button @onclick="HideContacts">Show/Hide Contacts</button>
 

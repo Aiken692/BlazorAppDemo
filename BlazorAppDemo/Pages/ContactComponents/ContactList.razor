@@ -2,29 +2,37 @@
 
 <input type="checkbox" @bind="DisplayEmail" /><label>Display Email</label>
 
-@if (Contacts is null)
+@if (DisplayContacts)
 {
-    @NullContacts;
-}
-else if(Contacts.Count == 0)
-{
-    @EmptyContacts;
-
-    
-}
-else
-{
-    @foreach (var contact in Contacts)
+    @if (Contacts is null)
     {
-        <ContactComponent1 CurrentContact="contact" displayEmail="@DisplayEmail" DeleteCurrentContact="DeleteContact">
+        @NullContacts
+        ;
+    }
+    else if (Contacts.Count == 0)
+    {
+        @EmptyContacts;
+    }
+    else
+    {
+        @foreach (var contact in Contacts)
+        {
+            <ContactComponent1 CurrentContact="contact" displayEmail="@DisplayEmail" DeleteCurrentContact="RequestPermission">
 
-        </ContactComponent1>
+            </ContactComponent1>
+        }
     }
 }
+
+<DeleteConfirmation @ref="deleteConfimation" OnConfirmed="OnDeleteConfirmed"></DeleteConfirmation>
+
+
 
 
 
 @code {
+    private DeleteConfirmation deleteConfimation;
+
     [Parameter]
     public RenderFragment NullContacts { get; set; }
 
@@ -37,14 +45,29 @@ else
 
     private bool DisplayEmail = false;
 
-    private async Task DeleteContact(Contact contact)
+    private bool DisplayContacts = true;
+
+    private async Task RequestPermission(Contact contact)
     {
-        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", $"Would you love to proceed with the Deleting of {contact.FirstName} {contact.LastName} from contacts list?");
-        
-        if (confirm)
-        {
-            Contacts.Remove(contact);
-        }
-      
+        //var confirm = await jsRuntime.InvokeAsync<bool>("confirm", $"Would you love to proceed with the Deleting of {contact.FirstName} {contact.LastName} from contacts list?");
+
+        //if (confirm)
+        //{
+        //    Contacts.Remove(contact);
+        //}
+
+        deleteConfimation.BodyContent = $"Would you love to delete {contact.FirstName} {contact.LastName} from the List ?";
+        deleteConfimation.ContactToDelete = contact;
+        deleteConfimation.Show();
+    }
+
+    public void ShowContact() => DisplayContacts = true;
+
+    public void HideContact() => DisplayContacts = false;
+
+    private async Task OnDeleteConfirmed(Contact contact)
+    {
+        Contacts.Remove(contact);
+        deleteConfimation.Hide();
     }
 }

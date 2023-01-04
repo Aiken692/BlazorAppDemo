@@ -152,3 +152,5 @@ C:\Users\LaboremusUganda\Desktop\Davies\BlazorAppDemo\obj\Debug\net5.0\BlazorApp
 C:\Users\LaboremusUganda\Desktop\Davies\BlazorAppDemo\obj\Debug\net5.0\BlazorAppDemo.genruntimeconfig.cache
 C:\Users\LaboremusUganda\Desktop\Davies\BlazorAppDemo\obj\Debug\net5.0\ref\BlazorAppDemo.dll
 C:\Users\LaboremusUganda\Desktop\Davies\BlazorAppDemo\obj\Debug\net5.0\BlazorAppDemo.csproj.CopyComplete
+D:\Personal_Projects\BlazorAppDemo\BlazorAppDemo\obj\Debug\net5.0\RazorDeclaration\Shared\DeleteConfirmation.razor.g.cs
+D:\Personal_Projects\BlazorAppDemo\BlazorAppDemo\obj\Debug\net5.0\Razor\Shared\DeleteConfirmation.razor.g.cs

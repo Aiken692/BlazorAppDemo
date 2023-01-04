@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace BlazorAppDemo.Pages.ContactComponents
+namespace BlazorAppDemo.Shared
 {
     #line hidden
     using System;
@@ -89,60 +89,13 @@ using BlazorAppDemo.Models;
 #line default
 #line hidden
 #nullable disable
-    public partial class ContactList : global::Microsoft.AspNetCore.Components.ComponentBase
+    public partial class DeleteConfirmation : global::Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(global::Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 33 "D:\Personal_Projects\BlazorAppDemo\BlazorAppDemo\Pages\ContactComponents\ContactList.razor"
-       
-    private DeleteConfirmation deleteConfimation;
-
-    [Parameter]
-    public RenderFragment NullContacts { get; set; }
-
-    [Parameter]
-    public RenderFragment EmptyContacts { get; set; }
-
-
-    [Parameter]
-    public List<Contact> Contacts { get; set; }
-
-    private bool DisplayEmail = false;
-
-    private bool DisplayContacts = true;
-
-    private async Task RequestPermission(Contact contact)
-    {
-        //var confirm = await jsRuntime.InvokeAsync<bool>("confirm", $"Would you love to proceed with the Deleting of {contact.FirstName} {contact.LastName} from contacts list?");
-
-        //if (confirm)
-        //{
-        //    Contacts.Remove(contact);
-        //}
-
-        deleteConfimation.BodyContent = $"Would you love to delete {contact.FirstName} {contact.LastName} from the List ?";
-        deleteConfimation.ContactToDelete = contact;
-        deleteConfimation.Show();
-    }
-
-    public void ShowContact() => DisplayContacts = true;
-
-    public void HideContact() => DisplayContacts = false;
-
-    private async Task OnDeleteConfirmed(Contact contact)
-    {
-        Contacts.Remove(contact);
-        deleteConfimation.Hide();
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime jsRuntime { get; set; }
     }
 }
 #pragma warning restore 1591
